@@ -1,4 +1,4 @@
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { getPilpres } from "@/services";
 import { useEffect } from "react";
 import Link from "next/link";
@@ -70,7 +70,7 @@ const IdCalonPage: React.FC<IdCalonPageProps> = ({ idCalon, dataCalon }) => {
 
 export default IdCalonPage;
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async (context) => {
   const idCalon = context.params?.idCalon || "";
 
   const data = await getPilpres();
