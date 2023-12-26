@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 import { getPilpres } from "@/services";
 import { useEffect } from "react";
 import Link from "next/link";
@@ -69,6 +69,13 @@ const IdCalonPage: React.FC<IdCalonPageProps> = ({ idCalon, dataCalon }) => {
 };
 
 export default IdCalonPage;
+
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+  return {
+    paths: [], //indicates that no page needs be created at build time
+    fallback: "blocking", //indicates the type of fallback
+  };
+};
 
 export const getStaticProps: GetStaticProps = async (context) => {
   const idCalon = context.params?.idCalon || "";
