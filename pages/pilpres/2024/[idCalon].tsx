@@ -70,6 +70,8 @@ const IdCalonPage: React.FC<IdCalonPageProps> = ({ idCalon, dataCalon }) => {
 
 export default IdCalonPage;
 
+export const runtime = "experimental-edge"; // 'nodejs' (default) | 'edge'
+
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
   return {
     paths: [], //indicates that no page needs be created at build time
