@@ -1,12 +1,15 @@
-import axios from "axios";
-
 export const getPilpres = () => {
-  return axios
-    .get("https://api.npoint.io/42afb3873a8951e88d56")
+  return fetch("https://api.npoint.io/42afb3873a8951e88d56")
     .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
       // Handle the response data here
-      console.log(response.data);
-      return response.data;
+      console.log(data);
+      return data;
     })
     .catch((error) => {
       // Handle any errors here
@@ -16,12 +19,17 @@ export const getPilpres = () => {
 };
 
 export const getPilpresByIndex = (index: number) => {
-  return axios
-    .get(`https://api.npoint.io/42afb3873a8951e88d56/${index}`)
+  return fetch(`https://api.npoint.io/42afb3873a8951e88d56/${index}`)
     .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
       // Handle the response data here
-      console.log(response.data);
-      return response.data;
+      console.log(data);
+      return data;
     })
     .catch((error) => {
       // Handle any errors here
