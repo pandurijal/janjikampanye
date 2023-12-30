@@ -33,7 +33,9 @@ const IndexPage: React.FC = () => {
       <div className="p-8 md:px-40">
         <div className="py-4">
           <p className="text-4xl font-bold">Pilpres 2024</p>
-          <p className="text-xl">Cari tau siapa calon presidenmu!</p>
+          <p className="text-xl">
+            Rangkuman janji kampanye capres dan cawapres. Yuk bantu pantau!
+          </p>
         </div>
         <div>
           {candidates?.map((item: any, index: number) => (
